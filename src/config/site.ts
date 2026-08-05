@@ -1,7 +1,6 @@
 // Static content config. No database — this is the single source of truth
-// for nav, categories, and copy until real inventory/business details land.
-// Anything marked "placeholder" below is safe to edit without touching
-// component code.
+// for nav and copy until real business details land. Anything marked
+// "placeholder" below is safe to edit without touching component code.
 
 export interface NavItem {
   label: string;
@@ -9,71 +8,12 @@ export interface NavItem {
 }
 
 export const mainNav: NavItem[] = [
-  { label: "Shop", href: "/shop" },
-  { label: "Brands", href: "/brands" },
-  { label: "Mystery Box", href: "/mystery-box" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
-export interface Category {
-  slug: string;
-  name: string;
-  description: string;
-  image: string;
-}
-
-// Placeholder categories based on the product photos we have. Inventory is
-// still TBD — add/remove/rename freely, the shop grid and nav read from
-// this list.
-export const categories: Category[] = [
-  {
-    slug: "tops",
-    name: "Tops",
-    description: "Graphic tees and crewnecks",
-    image: "/images/hero-stack/merch-1.jpg",
-  },
-  {
-    slug: "bottoms",
-    name: "Bottoms",
-    description: "Denim, shorts, and jeans",
-    image: "/images/hero-stack/merch-4.jpg",
-  },
-  {
-    slug: "footwear",
-    name: "Footwear",
-    description: "Sneakers and slides",
-    image: "/images/hero-stack/merch-3.jpg",
-  },
-  {
-    slug: "headwear",
-    name: "Headwear",
-    description: "Caps and hats",
-    image: "/images/hero-stack/merch-2.jpg",
-  },
-  {
-    slug: "accessories",
-    name: "Accessories",
-    description: "Bags, belts, and jewelry",
-    image: "/images/hero-stack/merch-5.jpg",
-  },
-  {
-    slug: "sale",
-    name: "Sale",
-    description: "Marked-down drops",
-    image: "/images/hero-stack/merch-1.jpg",
-  },
-];
-
-export interface Brand {
-  id: string;
-  name: string;
-}
-
-// No confirmed brand partners yet — leave empty until real ones are
-// signed off, rather than showing placeholder logos. The Brands section
-// hides itself (see BrandsSection) when this is empty.
-export const brands: Brand[] = [];
+export const sizes = ["S", "M", "L", "XL", "XXL"] as const;
+export type Size = (typeof sizes)[number];
 
 export interface MysteryBoxTier {
   id: string;
@@ -82,31 +22,64 @@ export interface MysteryBoxTier {
   description: string;
 }
 
-// Placeholder pricing/copy — swap in real tiers once decided.
 export const mysteryBox = {
-  tagline: "One box. Curated drip. You won't know what's inside until it lands.",
+  tagline: "One box. Top-notch brands. You won't know what's inside until it lands.",
   description:
-    "Every Mystery Box is packed with real pieces from the shop floor, picked for that box's price tier. No filler, no expired stock.",
+    "Every Mystery Box is packed with real pieces from the shop floor — top-notch, quality brands, all different styles. No filler, no expired stock.",
+  heroImage: "/images/hero-stack/mastercubestore-pro-mystery-box-challenging-cube-puzzle-surprises-min-55-eur-in-value.png",
+  howItWorks: [
+    {
+      title: "Pick a tier",
+      description: "Choose your box and your size.",
+    },
+    {
+      title: "We pack it",
+      description: "Real pieces from top-notch, quality brands — different styles every time.",
+    },
+    {
+      title: "It ships",
+      description: "Straight to your door, no picking through a catalog.",
+    },
+  ],
   tiers: [
     {
       id: "starter",
       name: "Starter Box",
-      price: 40,
+      price: 150,
       description: "2-3 items, streetwear staples",
     },
     {
       id: "heavy-hitter",
       name: "Heavy Hitter Box",
-      price: 75,
+      price: 250,
       description: "4-5 items, includes at least one graphic tee and one accessory",
     },
     {
       id: "drip-nation",
       name: "Drip Nation Box",
-      price: 120,
+      price: 350,
       description: "Full fit, footwear included",
     },
   ] satisfies MysteryBoxTier[],
+  faq: [
+    {
+      question: "Can I choose what's in my box?",
+      answer:
+        "No — that's the point. Every box is a random mix of top-notch, quality brands in different styles. You do pick your size, so everything fits.",
+    },
+    {
+      question: "What if something doesn't fit or isn't my style?",
+      answer: "Reach out through the contact page and we'll sort out an exchange.",
+    },
+    {
+      question: "How long does shipping take?",
+      answer: "Add real shipping timeline here.",
+    },
+    {
+      question: "Can I return items from a Mystery Box?",
+      answer: "Add real return/exchange policy here.",
+    },
+  ],
 };
 
 export interface StoreInfo {

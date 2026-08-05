@@ -7,11 +7,11 @@ function HighlightStack() {
       <div className="mx-auto grid max-w-4xl items-center gap-8 sm:grid-cols-2 sm:gap-12">
         <div className="order-2 sm:order-1">
           <h2 className="font-heading text-2xl font-bold sm:text-3xl">
-            Fresh fits, straight from the floor
+            A peek at what's been in past boxes
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Drag the stack (or swipe, if you're on your phone) to see what's
-            moving right now.
+            Top-notch, quality brands, different styles every time. Drag the
+            stack (or swipe, if you're on your phone) to see more.
           </p>
         </div>
         <div className="order-1 mx-auto aspect-square w-full max-w-xs sm:order-2 sm:max-w-sm">

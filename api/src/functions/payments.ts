@@ -37,11 +37,13 @@ app.http("paymentsHealth", {
 // Stub only. Checkout flow (Square Web Payments SDK vs Square hosted
 // checkout) is not decided yet.
 //
-// Security note for whoever implements this: the frontend sends a
-// client-computed `subtotal` — that's fine for display, but never trust it
-// for the actual charge amount. Recompute the price server-side from known
-// product/tier data before calling Square, otherwise a tampered request
-// body can pay less than the real price.
+// Security notes for whoever implements this:
+// - The frontend sends a client-computed `subtotal` — fine for display, but
+//   never trust it for the actual charge amount. Recompute the price
+//   server-side from known tier data before calling Square, otherwise a
+//   tampered request body can pay less than the real price.
+// - The request body also carries customer PII (email, phone, shipping
+//   address). Never log the raw body — log an order/request ID instead.
 async function createCheckout(
   _request: HttpRequest,
   _context: InvocationContext,

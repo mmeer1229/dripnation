@@ -42,7 +42,11 @@ function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
+          <Button size="sm" asChild className="hidden sm:inline-flex">
+            <Link to="/#tiers">Get a Mystery Box</Link>
+          </Button>
+
           <Button variant="ghost" size="icon" asChild aria-label={`Cart, ${count} item${count === 1 ? "" : "s"}`}>
             <Link to="/cart" className="relative">
               <ShoppingBag className="size-5" />
@@ -72,6 +76,14 @@ function Header() {
             <SheetTitle>Menu</SheetTitle>
           </SheetHeader>
           <nav className="flex flex-col gap-1 px-4">
+            <SheetClose asChild>
+              <Link
+                to="/#tiers"
+                className="rounded-md px-3 py-3 text-base font-medium text-primary hover:bg-muted"
+              >
+                Get a Mystery Box
+              </Link>
+            </SheetClose>
             {mainNav.map((item) => (
               <SheetClose asChild key={item.href}>
                 <NavLink
