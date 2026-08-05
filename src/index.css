@@ -1,0 +1,140 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/plus-jakarta-sans";
+@import "@fontsource-variable/lora";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Plus Jakarta Sans Variable', sans-serif;
+    --font-serif: 'Lora Variable', serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --card: #fdfdfd;
+  --ring: #f2470c;
+  --input: #ebebeb;
+  --muted: #f5f5f5;
+  --accent: #fff0eb;
+  --border: #e7e7ee;
+  --radius: 1.4rem;
+  --chart-1: #f2470c;
+  --chart-2: #ffad9e;
+  --chart-3: #fd822b;
+  --chart-4: #3276e4;
+  --chart-5: #ffd375;
+  --popover: #fcfcfc;
+  --primary: #f2470c;
+  --sidebar: #f5f8fb;
+  --secondary: #edf0f4;
+  --background: #fdfdfd;
+  --foreground: #000000;
+  --destructive: #e54b4f;
+  --sidebar-ring: #000000;
+  --sidebar-accent: #ffece5;
+  --sidebar-border: #ebebeb;
+  --card-foreground: #000000;
+  --sidebar-primary: #000000;
+  --muted-foreground: #525252;
+  --accent-foreground: #cb3706;
+  --popover-foreground: #000000;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #000000;
+  --secondary-foreground: #080808;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-primary-foreground: #ffffff;
+}
+
+.dark {
+  --card: #121212;
+  --ring: #f2470c;
+  --input: #3b3b3b;
+  --muted: #232325;
+  --accent: #741e02;
+  --border: #1f1f1f;
+  --radius: 1.4rem;
+  --chart-1: #f2470c;
+  --chart-2: #f4cd0b;
+  --chart-3: #fca5a5;
+  --chart-4: #5993f4;
+  --chart-5: #ffd375;
+  --popover: #19191a;
+  --primary: #f2470c;
+  --sidebar: #121212;
+  --secondary: #cd3a0a;
+  --background: #0a0a0a;
+  --foreground: #f0f0f0;
+  --destructive: #fb6a6a;
+  --sidebar-ring: #f2470c;
+  --sidebar-accent: #401202;
+  --sidebar-border: #33353a;
+  --card-foreground: #f0f0f0;
+  --sidebar-primary: #f2470c;
+  --muted-foreground: #969696;
+  --accent-foreground: #fefefe;
+  --popover-foreground: #f0f0f0;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #f0f0f0;
+  --secondary-foreground: #f0f0f0;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #db3b06;
+  --sidebar-primary-foreground: #ffffff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    }
+}

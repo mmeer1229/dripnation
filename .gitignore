@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Env files — never commit secrets
+.env
+.env.*
+!.env.example
+
+# Azure Functions / SWA
+api/local.settings.json
+api/bin
+api/obj
+.azure
+.swa
+
+# Portable Node runtime used only to satisfy the SWA CLI's Node version
+# check locally (see README) — never committed.
+.tools/
+
+# Raw design/planning references (screenshots, notes) — not for the public
+# repo. The images the site actually uses are already copied into
+# public/images/.
+reference_files/
